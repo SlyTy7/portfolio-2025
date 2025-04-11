@@ -44,7 +44,6 @@ export default function About() {
 				engaging
 			</Typography>
 
-
 			<Typography variant="h5" gutterBottom sx={{ mt: 4, mb: 1 }}>
 				Career Timeline
 			</Typography>
@@ -63,7 +62,7 @@ export default function About() {
 						seamless web app interfaces.
 					</Typography>
 				</Box>
-        <Divider/>
+				<Divider />
 				<Box>
 					<Typography variant="subtitle1">
 						<strong>Owner & Frontend Developer</strong> – Gold Robot
@@ -78,8 +77,7 @@ export default function About() {
 						user experiences.
 					</Typography>
 				</Box>
-        <Divider/>
-
+				<Divider />
 				<Box>
 					<Typography variant="subtitle1">
 						<strong>Frontend Developer</strong> – The Pedowitz Group
@@ -93,8 +91,7 @@ export default function About() {
 						strategy for marketing-focused solutions.
 					</Typography>
 				</Box>
-        <Divider/>
-
+				<Divider />
 				<Box>
 					<Typography variant="subtitle1">
 						<strong>Frontend Developer</strong> – SmartBug Media
@@ -108,8 +105,7 @@ export default function About() {
 						accelerate delivery timelines.
 					</Typography>
 				</Box>
-        <Divider/>
-
+				<Divider />
 				<Box>
 					<Typography variant="subtitle1">
 						<strong>Frontend Developer</strong> – SpotOn Inc.
@@ -126,7 +122,7 @@ export default function About() {
 				</Box>
 			</Stack>
 
-      <Typography variant="h5" gutterBottom sx={{ mt: 4, mb: 1 }}>
+			<Typography variant="h5" gutterBottom sx={{ mt: 4, mb: 1 }}>
 				Skills
 			</Typography>
 			<Stack direction="row" spacing={0} sx={{ gap: 1 }} flexWrap="wrap">
@@ -139,7 +135,6 @@ export default function About() {
 					/>
 				))}
 			</Stack>
-
 		</Box>
 	);
 }
