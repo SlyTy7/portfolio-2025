@@ -46,7 +46,6 @@ export default function NotFound() {
 					justifyContent: "center",
 					alignItems: "center",
 					textAlign: "center",
-                    mt: -6,
 				}}
 			>
 				<Typography variant="h2" component="h1" gutterBottom>

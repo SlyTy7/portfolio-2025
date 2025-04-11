@@ -39,7 +39,6 @@ export default function Home() {
 					justifyContent: "center",
 					alignItems: "center",
 					textAlign: "center",
-					mt: -6,
 				}}
 			>
 				<Typography variant="h3" gutterBottom>
