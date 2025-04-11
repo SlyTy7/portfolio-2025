@@ -158,7 +158,6 @@ function ProjectCard({
 							target="_blank"
 							rel="noopener noreferrer"
 							sx={{
-								fontWeight: 600,
 								fontSize: 12,
 							}}
 						>
@@ -174,7 +173,6 @@ function ProjectCard({
 							target="_blank"
 							rel="noopener noreferrer"
 							sx={{
-								fontWeight: 600,
 								fontSize: 12,
 							}}
 						>
