@@ -5,8 +5,11 @@ import { Box, Typography, Link } from "@mui/material";
 export default function Footer() {
   return (
     <Box component="footer" sx={{ py: 3, textAlign: 'center' }}>
+      <Typography variant="body2" color="text.secondary" sx={{ mp: 1 }}>
+        © Copyright {new Date().getFullYear()}. All Rights Reserved.
+      </Typography>
       <Typography variant="body2" color="text.secondary">
-        © {new Date().getFullYear()} Tyler West
+        Built and designed by Tyler West.
       </Typography>
       <Box mt={1}>
         <Link href="https://github.com/SlyTy7" target="_blank" rel="noopener" color="inherit" sx={{ mx: 1 }}>
