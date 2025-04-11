@@ -103,7 +103,7 @@ export default function Contact() {
 						variant="outlined"
 						color="primary"
 						component="a"
-						href="/tyler-west-resume.pdf"
+						href="./tyler-west-resume.pdf"
 						target="_blank"
 						rel="noopener"
 					>
