@@ -19,7 +19,7 @@ export default function Home() {
           left: 0,
           width: "100%",
           height: "calc(100vh - 80px)",
-          backgroundImage: `url(./home-background.jpg)`, 
+          backgroundImage: `url(/home-background.jpg)`, 
           filter: "grayscale(100%)",
           backgroundSize: "cover",
           backgroundPosition: "center -80px",

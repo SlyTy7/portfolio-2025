@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 import "./App.css";
 
 const darkTheme = createTheme({
@@ -60,6 +61,9 @@ export default function App() {
 							</Container>
 						}
 					/>
+
+					<Route path="*" element={<NotFound />} />
+
 				</Routes>
 				<Footer />
 			</Router>
