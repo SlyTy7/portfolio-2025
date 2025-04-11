@@ -9,7 +9,7 @@ export default defineConfig({
     react(),
     copy({
       targets: [
-        { src: 'index.html', dest: 'dist', rename: '404.html' }
+        { src: 'dist/index.html', dest: 'dist', rename: '404.html' }
       ],
       hook: 'writeBundle'
     })
