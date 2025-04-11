@@ -3,13 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://tylerwest.dev/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy" : "npm run build",
+    "predeploy" : "echo 'tylerwest.dev' > dist/CNAME",
     "deploy" : "gh-pages -d dist"
   },
   "dependencies": {
