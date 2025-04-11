@@ -1,6 +1,6 @@
 // components/Footer.jsx
 // Simple Box with your name and social links
-import { Box, Typography, Link } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 export default function Footer() {
   return (
@@ -11,14 +11,6 @@ export default function Footer() {
       <Typography variant="body2" color="text.secondary">
         Built and designed by Tyler West.
       </Typography>
-      <Box mt={1}>
-        <Link href="https://github.com/SlyTy7" target="_blank" rel="noopener" color="inherit" sx={{ mx: 1 }}>
-          GitHub
-        </Link>
-        <Link href="https://www.linkedin.com/in/tylerjwest/" target="_blank" rel="noopener" color="inherit" sx={{ mx: 1 }}>
-          LinkedIn
-        </Link>
-      </Box>
     </Box>
   );
 }
