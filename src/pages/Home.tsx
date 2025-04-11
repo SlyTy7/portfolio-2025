@@ -10,7 +10,7 @@ export default function Home() {
         Tyler West
       </Typography>
       <Typography variant="h6" color="text.secondary" gutterBottom>
-        Frontend Developer | Crafting clean, responsive UIs with React
+        Frontend Software Developer
       </Typography>
       <Button 
         variant="contained" 
