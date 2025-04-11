@@ -4,7 +4,7 @@ import mapImage from "../assets/map.png";
 
 export default function Contact() {
   return (
-    <Box sx={{ mx: "auto", p: 4 }}>
+    <Box>
       <Typography variant="h4" gutterBottom>
         Contact
       </Typography>
@@ -21,8 +21,8 @@ export default function Contact() {
         LinkedIn: <Link href="https://www.linkedin.com/in/tylerjwest/" target="_blank" rel="noopener" color="primary">linkedin.com/in/tylerjwest</Link>
       </Typography>
 
-      <Typography variant="h6" gutterBottom>
-        Or send me a quick message:
+      <Typography variant="h5" gutterBottom>
+        Send me a message:
       </Typography>
 
       <Box component="form" noValidate autoComplete="off" sx={{ display: "flex", flexDirection: "column", gap: 2, mb: 4 }}>
