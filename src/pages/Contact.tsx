@@ -4,7 +4,6 @@ import {
 	TextField,
 	Button,
 	Paper,
-	IconButton,
 	Tooltip,
 } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
@@ -156,7 +155,7 @@ export default function Contact() {
 				<Paper
 					elevation={3}
 					sx={{
-						height: { xs: 300, sm: 400 },
+						height: { xs: 200, sm: 300, md: 400 },
 						overflow: "hidden",
 						borderRadius: 2,
 						flex: 1,
@@ -170,6 +169,7 @@ export default function Contact() {
 							width: "100%",
 							height: "100%",
 							objectFit: "cover",
+							display: "block",
 						}}
 					/>
 				</Paper>
