@@ -29,11 +29,11 @@ const projects: Project[] = [
 		title: "Portfolio Redesign",
 		description:
 			"A sleek and modern redesign of my personal portfolio using React and Material UI.",
-		tech: ["React", "Material UI", "Vite"],
-		image: "https://placehold.co/400x200?text=Portfolio+Redesign",
-		github: "https://github.com/yourusername/portfolio-redesign",
-		live: "https://yourportfolio.com",
-		date: "April 10th, 2025",
+		tech: ["React", "Material UI", "Vite", "Git", "GitHub"],
+		image: "/projects/portfolio.png",
+		github: "https://github.com/SlyTy7/portfolio-2025",
+		live: "https://www.tylerwest.dev",
+		date: "April 11th, 2025",
 	},
 	{
 		title: "Dashboard App",
