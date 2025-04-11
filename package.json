@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy" : "echo 'tylerwest.dev' > dist/CNAME",
-    "deploy" : "gh-pages -d dist"
+    "build": "vite build",
+    "predeploy": "echo 'tylerwest.dev' > dist/CNAME",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
