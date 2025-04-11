@@ -20,8 +20,11 @@ export default function About() {
       <Typography variant="h4" gutterBottom>
         About Me
       </Typography>
-      <Typography variant="body1" color="text.secondary" paragraph>
-        I'm a frontend developer with a passion for building intuitive and responsive user interfaces. I enjoy transforming complex problems into elegant, user-friendly solutions using modern web technologies.
+      <Typography variant="body1" color="text.secondary" component={"p"} sx={{ mb: 2 }}>
+      I'm a frontend developer with 7 years of professional experience building responsive, user-friendly web interfaces. I specialize in JavaScript, React, HTML, and CSS, and have strong experience working with HubSpot for custom development and integration.
+      </Typography>
+      <Typography variant="body1" color="text.secondary" component={"p"} sx={{ mb: 2 }}>
+      I enjoy turning complex ideas into intuitive user experiences and take pride in writing clean, maintainable code. Whether collaborating with a team or working independently, I'm driven by creating interfaces that are both functional and visually engaging
       </Typography>
       <Typography variant="h6" gutterBottom>
         Skills
