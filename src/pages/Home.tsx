@@ -1,6 +1,5 @@
 import { Box, Typography, Button, Container } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import backgroundImage from "../assets/home-background.jpg";
 
 export default function Home() {
   return (
@@ -20,7 +19,7 @@ export default function Home() {
           left: 0,
           width: "100%",
           height: "calc(100vh - 80px)",
-          backgroundImage: `url(${backgroundImage})`, 
+          backgroundImage: `url(/home-background.jpg)`, 
           filter: "grayscale(100%)",
           backgroundSize: "cover",
           backgroundPosition: "center -80px",
