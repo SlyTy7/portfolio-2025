@@ -120,7 +120,7 @@ function ProjectCard({
 	date,
 }: Project) {
 	return (
-		<Card elevation={4} square={false}>
+		<Card elevation={4} square={false} className={"project-card"}>
 			<CardHeader title={title} subheader={date} />
 			<CardMedia component="img" alt={title} height="200" image={image} />
 			<CardContent>
