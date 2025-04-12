@@ -30,10 +30,10 @@ export default function Home() {
 					textAlign: "center",
 				}}
 			>
-				<Typography variant="h3" gutterBottom>
+				<Typography component={"h1"} variant="h2" gutterBottom>
 					Tyler West
 				</Typography>
-				<Typography variant="h6" color="text.secondary" gutterBottom>
+				<Typography component={"h2"} variant="h5" color="text.secondary" gutterBottom>
 					Frontend Software Developer
 				</Typography>
 				<Button
