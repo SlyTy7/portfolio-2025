@@ -1,6 +1,9 @@
 import { Box, Typography, Button, Container } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 
+import "../css/Home.css";
+
+
 export default function Home() {
 	return (
 		<Box
@@ -12,21 +15,7 @@ export default function Home() {
 			}}
 		>
 			{/* Full-width background image */}
-			<Box
-				sx={{
-					position: "absolute",
-					top: 0,
-					left: 0,
-					width: "100%",
-					height: "calc(100vh - 80px)",
-					backgroundImage: `url(/home-background.jpg)`,
-					filter: "grayscale(100%)",
-					backgroundSize: "cover",
-					backgroundPosition: "center",
-					opacity: 0.16,
-					zIndex: 0,
-				}}
-			/>
+			<Box className="hero-background" />
 
 			{/* Centered content container */}
 			<Container

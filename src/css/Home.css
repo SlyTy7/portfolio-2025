@@ -1,0 +1,13 @@
+.hero-background {
+	background-image: url('/home-background.jpg');
+	background-size: cover;
+	background-position: center;
+	filter: grayscale(100%);
+	opacity: 0.16;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: calc(100vh - 80px);
+	z-index: 0;
+}
