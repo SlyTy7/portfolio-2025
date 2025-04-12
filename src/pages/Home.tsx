@@ -30,7 +30,7 @@ export default function Home() {
 					textAlign: "center",
 				}}
 			>
-				<Typography component={"h1"} variant="h2" gutterBottom>
+				<Typography component={"h1"} variant="h2" sx={{ fontWeight: 400 }} gutterBottom>
 					Tyler West
 				</Typography>
 				<Typography component={"h2"} variant="h5" color="text.secondary" gutterBottom>

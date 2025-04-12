@@ -48,7 +48,7 @@ export default function NotFound() {
 					textAlign: "center",
 				}}
 			>
-				<Typography variant="h2" component="h1" gutterBottom>
+				<Typography variant="h2" component="h1" sx={{ fontWeight: 400 }} gutterBottom>
 					404
 				</Typography>
 				<Typography variant="h5" component="h2" gutterBottom>
