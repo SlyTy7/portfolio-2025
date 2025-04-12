@@ -1,54 +1,60 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Tyler West | Frontend Developer Portfolio
 
-Currently, two official plugins are available:
+Welcome to my personal portfolio built with **React**, **TypeScript**, and **Vite**! This site showcases my skills, projects, and professional experience as a frontend developer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Fast and modern development setup with **Vite** for ultra-fast hot-reloading.
+- Styled using **Material UI** components for a clean, responsive design.
+- Built with **React** and **TypeScript** for scalable and maintainable code.
+- Custom **404 page** and smooth SPA routing using **React Router**.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+To get started, clone the repository and install the dependencies:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/your-username/portfolio-2025.git
+cd portfolio-2025
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+To start the development server:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+The app will be available at [http://localhost:5173](http://localhost:5173).
+
+### Build
+
+To create a production build of the site:
+
+```bash
+npm run build
+```
+
+### Deployment
+
+To deploy to GitHub Pages:
+
+```bash
+npm run deploy
+```
+
+Make sure to set up your GitHub Pages settings and configure your repository’s `gh-pages` branch.
+
+## Technologies Used
+
+- **React** & **React Router**
+- **TypeScript** for type safety
+- **Material UI v7** for design
+- **Vite** for fast development and builds
+- **GitHub Pages** for hosting
+
+## License
+
+MIT License – see [LICENSE](LICENSE) for details.
