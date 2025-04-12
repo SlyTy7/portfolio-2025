@@ -1,7 +1,7 @@
 
 # Tyler West | Frontend Developer Portfolio
 
-Welcome to my personal portfolio built with **React**, **TypeScript**, and **Vite**! This site showcases my skills, projects, and professional experience as a frontend developer.
+Welcome to my personal portfolio built with **React**, **TypeScript**, and **Vite**! This site showcases my skills, projects, and professional experience as a frontend developer.  You can view the live version of the portfolio at [www.tylerwest.dev](https://www.tylerwest.dev).
 
 ## Features
 - Fast and modern development setup with **Vite** for ultra-fast hot-reloading.
