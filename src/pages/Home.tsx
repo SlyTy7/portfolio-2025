@@ -22,7 +22,7 @@ export default function Home() {
 					backgroundImage: `url(/home-background.jpg)`,
 					filter: "grayscale(100%)",
 					backgroundSize: "cover",
-					backgroundPosition: "center -80px",
+					backgroundPosition: "center",
 					opacity: 0.16,
 					zIndex: 0,
 				}}
