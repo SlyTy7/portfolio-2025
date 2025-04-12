@@ -14,4 +14,7 @@ export default defineConfig({
       hook: 'writeBundle'
     })
   ],
+  build: {
+    chunkSizeWarningLimit: 1000,
+  },
 })
