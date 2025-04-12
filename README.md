@@ -14,7 +14,7 @@ Welcome to my personal portfolio built with **React**, **TypeScript**, and **Vit
 To get started, clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/your-username/portfolio-2025.git
+git clone https://github.com/slyty7/portfolio-2025.git
 cd portfolio-2025
 npm install
 ```
