@@ -38,7 +38,7 @@ const projects: Project[] = [
 	{
 		title: "Clock.js",
 		description:
-			"A minimalist digital clock built with vanilla JavaScript, HTML, and CSS. This project demonstrates how to create a real-time updating clock without relying on external libraries or frameworks.",
+			"A minimalist digital clock built with vanilla JavaScript, HTML, and CSS.",
 		tech: ["HTML", "CSS", "JavaScript"],
 		image: "/projects/clock.png",
 		github: "https://github.com/SlyTy7/clock",
