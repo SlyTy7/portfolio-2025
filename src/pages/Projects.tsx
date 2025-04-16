@@ -36,13 +36,14 @@ const projects: Project[] = [
 		date: "April 11th, 2025",
 	},
 	{
-		title: "Dashboard App",
+		title: "Clock.js",
 		description:
-			"A responsive admin dashboard with charting and theming capabilities.",
-		tech: ["React", "Recharts", "MUI"],
-		image: "https://placehold.co/400x200?text=Dashboard+App",
-		github: "https://github.com/yourusername/dashboard-app",
-		date: "April 10th, 2025",
+			"A minimalist digital clock built with vanilla JavaScript, HTML, and CSS. This project demonstrates how to create a real-time updating clock without relying on external libraries or frameworks.",
+		tech: ["HTML", "CSS", "JavaScript"],
+		image: "/projects/clock.png",
+		github: "https://github.com/SlyTy7/clock",
+		live: "https://slyty7.github.io/clock/",
+		date: "April 15th, 2025",
 	},
 	{
 		title: "Landing Page",
