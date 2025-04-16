@@ -32,7 +32,7 @@ const projects: Project[] = [
 		tech: ["HTML", "CSS", "JavaScript"],
 		image: "/projects/clock.png",
 		github: "https://github.com/SlyTy7/clock",
-		live: "https://slyty7.github.io/clock/",
+		live: "https://slyty7.github.io/clock",
 		date: "April 15th, 2025",
 	},
 	{
