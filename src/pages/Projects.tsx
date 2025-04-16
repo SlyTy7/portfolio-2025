@@ -26,16 +26,6 @@ interface Project {
 // Sample projects with correct type annotations
 const projects: Project[] = [
 	{
-		title: "Portfolio Redesign",
-		description:
-			"A sleek and modern redesign of my personal portfolio using React and Material UI.",
-		tech: ["React", "Material UI", "Vite", "Git", "GitHub"],
-		image: "/projects/portfolio.png",
-		github: "https://github.com/SlyTy7/portfolio-2025",
-		live: "https://www.tylerwest.dev",
-		date: "April 11th, 2025",
-	},
-	{
 		title: "Clock.js",
 		description:
 			"A minimalist digital clock built with vanilla JavaScript, HTML, and CSS.",
@@ -44,6 +34,16 @@ const projects: Project[] = [
 		github: "https://github.com/SlyTy7/clock",
 		live: "https://slyty7.github.io/clock/",
 		date: "April 15th, 2025",
+	},
+	{
+		title: "Portfolio Redesign",
+		description:
+			"A sleek and modern redesign of my personal portfolio using React and Material UI.",
+		tech: ["React", "Material UI", "Vite", "Git", "GitHub"],
+		image: "/projects/portfolio.png",
+		github: "https://github.com/SlyTy7/portfolio-2025",
+		live: "https://www.tylerwest.dev",
+		date: "April 11th, 2025",
 	},
 	{
 		title: "Landing Page",
