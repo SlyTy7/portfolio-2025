@@ -26,6 +26,16 @@ interface Project {
 // Sample projects with correct type annotations
 const projects: Project[] = [
 	{
+		title: "Pinpoint",
+		description:
+			"PinPoint is a web app that allows users to log in, save their current location as a pin, and view their collection of pins on an interactive map.",
+		tech: ["Vite", "React", "Typesccript", "Leaflet", "OpenCage", "Material UI"],
+		image: "/projects/pinpoint.png",
+		github: "https://github.com/SlyTy7/pinpoint",
+		live: "https://slyty7.github.io/pinpoint",
+		date: "April 18th, 2025",
+	},
+	{
 		title: "Clock.js",
 		description:
 			"A minimalist digital clock built with vanilla JavaScript, HTML, and CSS.",
@@ -99,15 +109,7 @@ const projects: Project[] = [
 		github: "https://github.com/yourusername/task-manager",
 		live: "https://task-manager-demo.com",
 		date: "April 10th, 2025",
-	},
-	{
-		title: "Finance Tracker",
-		description:
-			"Track income and expenses with visual graphs and monthly summaries.",
-		tech: ["React", "Chart.js", "Context API"],
-		image: "https://placehold.co/400x200?text=Finance+Tracker",
-		date: "April 10th, 2025",
-	},
+	}
 ];
 
 // Updated ProjectCard to conditionally show buttons
