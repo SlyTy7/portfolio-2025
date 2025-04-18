@@ -29,7 +29,7 @@ const projects: Project[] = [
 		title: "Pinpoint",
 		description:
 			"PinPoint is a web app that allows users to log in, save their current location as a pin, and view their collection of pins on an interactive map.",
-		tech: ["Vite", "React", "Typesccript", "Leaflet", "OpenCage", "Material UI"],
+		tech: ["Vite", "React", "TypeScript", "Leaflet", "OpenCage", "Material UI", "HTML", "CSS", "JavaScript"],
 		image: "/projects/pinpoint.png",
 		github: "https://github.com/SlyTy7/pinpoint",
 		live: "https://slyty7.github.io/pinpoint",
