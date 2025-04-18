@@ -130,13 +130,14 @@ function ProjectCard({
 				<Typography variant="body2" color="text.secondary">
 					{description}
 				</Typography>
-				<Box mt={1}>
+				<Box mt={1} sx={{ display: "flex", flexWrap: "wrap"}}>
 					{tech.map((t: string, i: number) => (
 						<Box
 							key={i}
 							component="span"
 							sx={{
 								mr: 1,
+								mb: 1,
 								px: 1,
 								py: 0.5,
 								borderRadius: 1,
