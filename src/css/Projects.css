@@ -1,3 +1,12 @@
+.project-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .project-card .MuiCardActions-root {
     padding: 16px;
+    align-items: flex-end;
+    flex: 1;
 }
