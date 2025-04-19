@@ -14,7 +14,7 @@ import "../css/Projects.css";
 
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../lib/firebase"; // adjust path if needed
+import { db } from "../lib/firebase";
 
 // Define the types for the project object
 interface Project {
@@ -46,7 +46,6 @@ const mapFirestoreDocToProject = (doc: any): Project => {
 	};
 };
 
-// Updated ProjectCard to conditionally show buttons
 function ProjectCard({
 	title,
 	description,
