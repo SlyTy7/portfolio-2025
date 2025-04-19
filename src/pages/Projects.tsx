@@ -12,6 +12,10 @@ import {
 
 import "../css/Projects.css";
 
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../lib/firebase"; // adjust path if needed
+
 // Define the types for the project object
 interface Project {
 	title: string;
@@ -23,94 +27,15 @@ interface Project {
 	live?: string;
 }
 
-// Sample projects with correct type annotations
-const projects: Project[] = [
-	{
-		title: "Pinpoint",
-		description:
-			"PinPoint is a web app that allows users to log in, save their current location as a pin, and view their collection of pins on an interactive map.",
-		tech: ["Vite", "React", "TypeScript", "Leaflet", "OpenCage", "Firebase", "Firestore", "Material UI", "HTML", "CSS", "JavaScript"],
-		image: "/projects/pinpoint.png",
-		github: "https://github.com/SlyTy7/pinpoint",
-		live: "https://slyty7.github.io/pinpoint",
-		date: "April 18th, 2025",
-	},
-	{
-		title: "Clock.js",
-		description:
-			"A minimalist digital clock built with vanilla JavaScript, HTML, and CSS.",
-		tech: ["HTML", "CSS", "JavaScript"],
-		image: "/projects/clock.png",
-		github: "https://github.com/SlyTy7/clock",
-		live: "https://slyty7.github.io/clock",
-		date: "April 15th, 2025",
-	},
-	{
-		title: "Portfolio Redesign",
-		description:
-			"A sleek and modern redesign of my personal portfolio using React and Material UI.",
-		tech: ["React", "Material UI", "Vite", "Git", "GitHub"],
-		image: "/projects/portfolio.png",
-		github: "https://github.com/SlyTy7/portfolio-2025",
-		live: "https://www.tylerwest.dev",
-		date: "April 11th, 2025",
-	},
-	{
-		title: "Landing Page",
-		description:
-			"A high-converting marketing landing page built with accessibility and performance in mind.",
-		tech: ["HTML", "CSS", "JavaScript"],
-		image: "https://placehold.co/400x200?text=Landing+Page",
-		live: "https://landing-page-demo.com",
-		date: "April 10th, 2025",
-	},
-	{
-		title: "E-commerce Store",
-		description:
-			"A basic online store frontend with product filtering and a shopping cart.",
-		tech: ["React", "Redux", "Stripe"],
-		image: "https://placehold.co/400x200?text=E-commerce+Store",
-		github: "https://github.com/yourusername/ecommerce-store",
-		live: "https://ecommerce-demo.com",
-		date: "April 10th, 2025",
-	},
-	{
-		title: "Blog Platform",
-		description:
-			"A minimal blogging platform with Markdown support and content management.",
-		tech: ["Next.js", "Tailwind CSS", "MDX"],
-		image: "https://placehold.co/400x200?text=Blog+Platform",
-		github: "https://github.com/yourusername/blog-platform",
-		live: "https://blog-platform-demo.com",
-		date: "April 10th, 2025",
-	},
-	{
-		title: "Weather App",
-		description:
-			"A weather forecast app using OpenWeather API and geolocation.",
-		tech: ["React", "Axios", "API Integration"],
-		image: "https://placehold.co/400x200?text=Weather+App",
-		live: "https://weather-demo.com",
-		date: "April 10th, 2025",
-	},
-	{
-		title: "Chat App",
-		description: "A real-time chat application built with Firebase.",
-		tech: ["React", "Firebase", "Material UI"],
-		image: "https://placehold.co/400x200?text=Chat+App",
-		github: "https://github.com/yourusername/chat-app",
-		date: "April 10th, 2025",
-	},
-	{
-		title: "Task Manager",
-		description: "A simple to-do app with drag-and-drop task management.",
-		tech: ["React", "Dnd Kit", "Local Storage"],
-		image: "https://placehold.co/400x200?text=Task+Manager",
-		github: "https://github.com/yourusername/task-manager",
-		live: "https://task-manager-demo.com",
-		date: "April 10th, 2025",
-	}
-];
+const mapFirestoreDocToProject = (doc: any): Project => ({
+	title: doc.name,
+	description: doc.description,
+	tech: doc.topics || [],
+	image: doc.screenshot || doc.socialPreview,
+	date: new Date(doc.updatedAt).toDateString(),
+	github: doc.githubUrl,
+	live: doc.liveUrl,
+});
 
 // Updated ProjectCard to conditionally show buttons
 function ProjectCard({
@@ -130,7 +55,7 @@ function ProjectCard({
 				<Typography variant="body2" color="text.secondary">
 					{description}
 				</Typography>
-				<Box mt={1} sx={{ display: "flex", flexWrap: "wrap"}}>
+				<Box mt={1} sx={{ display: "flex", flexWrap: "wrap" }}>
 					{tech.map((t: string, i: number) => (
 						<Box
 							key={i}
@@ -190,6 +115,20 @@ function ProjectCard({
 }
 
 export default function Projects() {
+	const [projects, setProjects] = useState<Project[]>([]);
+
+	useEffect(() => {
+		const fetchProjects = async () => {
+			const snapshot = await getDocs(collection(db, "projects"));
+			const fetchedProjects = snapshot.docs.map((doc) =>
+				mapFirestoreDocToProject(doc.data())
+			);
+			setProjects(fetchedProjects);
+		};
+
+		fetchProjects().catch(console.error);
+	}, []);
+
 	return (
 		<Box>
 			<Typography variant="h4" gutterBottom>
