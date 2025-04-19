@@ -34,7 +34,7 @@ const mapFirestoreDocToProject = (doc: any): Project => ({
 		(topic: string) => topic !== "portfolio-project"
 	),
 	image: doc.screenshot || doc.socialPreview,
-	date: new Date(doc.updatedAt).toDateString(),
+	date: new Date(doc.createdAt).toDateString(),
 	github: doc.githubUrl,
 	live: doc.liveUrl,
 });
