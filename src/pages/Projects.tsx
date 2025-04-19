@@ -30,7 +30,9 @@ interface Project {
 const mapFirestoreDocToProject = (doc: any): Project => ({
 	title: doc.name,
 	description: doc.description,
-	tech: doc.topics || [],
+	tech: (doc.topics || []).filter(
+		(topic: string) => topic !== "portfolio-project"
+	),
 	image: doc.screenshot || doc.socialPreview,
 	date: new Date(doc.updatedAt).toDateString(),
 	github: doc.githubUrl,
