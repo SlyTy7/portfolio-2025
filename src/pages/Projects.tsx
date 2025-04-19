@@ -27,17 +27,24 @@ interface Project {
 	live?: string;
 }
 
-const mapFirestoreDocToProject = (doc: any): Project => ({
-	title: doc.name,
-	description: doc.description,
-	tech: (doc.topics || []).filter(
-		(topic: string) => topic !== "portfolio-project"
-	),
-	image: doc.screenshot || doc.socialPreview,
-	date: new Date(doc.createdAt).toDateString(),
-	github: doc.githubUrl,
-	live: doc.liveUrl,
-});
+const mapFirestoreDocToProject = (doc: any): Project => {
+	const createdAt = new Date(doc.createdAt);
+
+	return {
+		title: doc.name,
+		description: doc.description,
+		tech: (doc.topics || []).filter(
+			(topic: string) => topic !== "portfolio-project"
+		),
+		image: doc.screenshot || doc.socialPreview,
+		date: createdAt.toLocaleDateString("en-US", {
+			year: "numeric",
+			month: "long",
+		}),
+		github: doc.githubUrl,
+		live: doc.liveUrl,
+	};
+};
 
 // Updated ProjectCard to conditionally show buttons
 function ProjectCard({
@@ -122,9 +129,13 @@ export default function Projects() {
 	useEffect(() => {
 		const fetchProjects = async () => {
 			const snapshot = await getDocs(collection(db, "projects"));
-			const fetchedProjects = snapshot.docs.map((doc) =>
-				mapFirestoreDocToProject(doc.data())
-			);
+			const fetchedProjects = snapshot.docs
+				.map((doc) => mapFirestoreDocToProject(doc.data()))
+				.sort(
+					(a, b) =>
+						new Date(b.date).getTime() - new Date(a.date).getTime()
+				);
+
 			setProjects(fetchedProjects);
 		};
 
