@@ -75,7 +75,7 @@ function ProjectCard({
 								px: 1,
 								py: 0.5,
 								borderRadius: 1,
-								bgcolor: "slategrey",
+								bgcolor: "#525866",
 								color: "white",
 								fontSize: 11,
 							}}
@@ -87,21 +87,6 @@ function ProjectCard({
 			</CardContent>
 			{(github || live) && (
 				<CardActions disableSpacing={false}>
-					{github && (
-						<Button
-							variant="outlined"
-							size="small"
-							color="primary"
-							href={github}
-							target="_blank"
-							rel="noopener noreferrer"
-							sx={{
-								fontSize: 12,
-							}}
-						>
-							See The Code
-						</Button>
-					)}
 					{live && (
 						<Button
 							variant="contained"
@@ -117,6 +102,22 @@ function ProjectCard({
 							View It Live
 						</Button>
 					)}
+					{github && (
+						<Button
+							color="inherit"
+							size="small"
+							variant="text"
+							href={github}
+							target="_blank"
+							rel="noopener noreferrer"
+							sx={{
+								fontSize: 12,
+							}}
+						>
+							See The Code
+						</Button>
+					)}
+
 				</CardActions>
 			)}
 		</Card>

@@ -8,5 +8,6 @@
 .project-card .MuiCardActions-root {
     padding: 16px;
     align-items: flex-end;
+    align-self: flex-start;
     flex: 1;
 }
