@@ -1,4 +1,4 @@
-
+<!-- portfolio-meta display_name: My Personal Portfolio -->
 # Tyler West | Frontend Developer Portfolio
 
 Welcome to my personal portfolio built with **React**, **TypeScript**, and **Vite**! This site showcases my skills, projects, and professional experience as a frontend developer.  You can view the live version of the portfolio at [www.tylerwest.dev](https://www.tylerwest.dev).
