@@ -31,7 +31,7 @@ const mapFirestoreDocToProject = (doc: any): Project => {
 	const createdAt = new Date(doc.createdAt);
 
 	return {
-		title: doc.name,
+		title: doc.displayName || doc.name,
 		description: doc.description,
 		tech: (doc.topics || []).filter(
 			(topic: string) => topic !== "portfolio-project"
