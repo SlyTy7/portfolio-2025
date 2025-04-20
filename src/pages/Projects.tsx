@@ -23,6 +23,7 @@ interface Project {
 	tech: string[];
 	image: string;
 	date: string;
+	timestamp: number;
 	github?: string;
 	live?: string;
 }
@@ -36,11 +37,15 @@ const mapFirestoreDocToProject = (doc: any): Project => {
 		tech: (doc.topics || []).filter(
 			(topic: string) => topic !== "portfolio-project"
 		),
-		image: doc.screenshot || doc.socialPreview || "/projects/github-placeholder.png",
+		image:
+			doc.screenshot ||
+			doc.socialPreview ||
+			"/projects/github-placeholder.png",
 		date: createdAt.toLocaleDateString("en-US", {
 			year: "numeric",
 			month: "long",
 		}),
+		timestamp: doc.createdAtTimestamp,
 		github: doc.githubUrl,
 		live: doc.liveUrl,
 	};
@@ -116,7 +121,6 @@ function ProjectCard({
 							See The Code
 						</Button>
 					)}
-
 				</CardActions>
 			)}
 		</Card>
@@ -131,10 +135,7 @@ export default function Projects() {
 			const snapshot = await getDocs(collection(db, "projects"));
 			const fetchedProjects = snapshot.docs
 				.map((doc) => mapFirestoreDocToProject(doc.data()))
-				.sort(
-					(a, b) =>
-						new Date(b.date).getTime() - new Date(a.date).getTime()
-				);
+				.sort((a, b) => b.timestamp - a.timestamp);
 
 			setProjects(fetchedProjects);
 		};
@@ -149,7 +150,11 @@ export default function Projects() {
 			</Typography>
 			<Grid container spacing={4}>
 				{projects.map((project, index) => (
-					<Grid size={{ xs: 12, sm: 6, md: 4 }} key={index} component="div">
+					<Grid
+						size={{ xs: 12, sm: 6, md: 4 }}
+						key={index}
+						component="div"
+					>
 						<ProjectCard {...project} />
 					</Grid>
 				))}
