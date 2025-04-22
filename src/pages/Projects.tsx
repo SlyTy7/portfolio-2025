@@ -39,8 +39,7 @@ const mapFirestoreDocToProject = (doc: any): Project => {
 		),
 		image:
 			doc.screenshot ||
-			doc.socialPreview ||
-			"/projects/github-placeholder.png",
+			doc.socialPreview,
 		date: createdAt.toLocaleDateString("en-US", {
 			year: "numeric",
 			month: "long",
@@ -63,7 +62,17 @@ function ProjectCard({
 	return (
 		<Card elevation={4} square={false} className={"project-card"}>
 			<CardHeader title={title} subheader={date} />
-			<CardMedia component="img" alt={title} height="200" image={image} />
+			<CardMedia
+				component="img"
+				alt={title}
+				height="200"
+				image={image}
+				onError={(e) => {
+					const target = e.target as HTMLImageElement;
+					target.onerror = null; // Prevent infinite loop if fallback also fails
+					target.src = "/projects/github-placeholder.png";
+				}}
+			/>
 			<CardContent>
 				<Typography variant="body2" color="text.secondary">
 					{description}
