@@ -37,9 +37,7 @@ const mapFirestoreDocToProject = (doc: any): Project => {
 		tech: (doc.topics || []).filter(
 			(topic: string) => topic !== "portfolio-project"
 		),
-		image:
-			doc.screenshot ||
-			doc.socialPreview,
+		image: doc.screenshot || doc.socialPreview,
 		date: createdAt.toLocaleDateString("en-US", {
 			year: "numeric",
 			month: "long",
