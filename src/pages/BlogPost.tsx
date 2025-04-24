@@ -2,11 +2,11 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { blogDb } from "../lib/firebase";
-import { Typography, CircularProgress, Box, Grid } from "@mui/material";
+import { Typography, CircularProgress, Box } from "@mui/material";
 
 type BlogPost = {
   headlines: string;
-  html: string; // HTML content
+  html: string;
   date: string;
 };
 
