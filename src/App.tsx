@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 import "./App.css";
 
@@ -58,6 +59,14 @@ export default function App() {
 						element={
 							<Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
 								<Contact />
+							</Container>
+						}
+					/>
+					<Route
+						path="/blog"
+						element={
+							<Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+								<Blog />
 							</Container>
 						}
 					/>

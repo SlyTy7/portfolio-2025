@@ -1,7 +1,3 @@
-// Placeholder pages and components (to be implemented):
-
-// components/Navbar.jsx
-// MUI AppBar with links to Home, Projects, About, Contact
 import {
 	AppBar,
 	Toolbar,
@@ -52,6 +48,13 @@ export default function Navbar() {
 							to="/contact"
 						>
 							Contact
+						</Button>
+						<Button
+							color="inherit"
+							component={RouterLink}
+							to="/blog"
+						>
+							Blog
 						</Button>
 					</Box>
 				</Toolbar>
