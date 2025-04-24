@@ -1,11 +1,19 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { blogDb } from "../lib/firebase";
-import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
+import {
+	Box,
+	Button,
+	Card,
+	CardContent,
+	Grid,
+	Typography,
+} from "@mui/material";
+import { Link } from "react-router-dom";
 
 type BlogPost = {
 	id: string;
-	createdAt: {seconds: number};
+	createdAt: { seconds: number };
 	headlines: string;
 	date: string;
 };
@@ -17,7 +25,7 @@ export default function Blog() {
 		const fetchPosts = async () => {
 			const snapshot = await getDocs(collection(blogDb, "posts"));
 
-			const data = snapshot.docs.map((doc) => ({				
+			const data = snapshot.docs.map((doc) => ({
 				id: doc.id,
 				...doc.data(),
 			})) as BlogPost[];
@@ -54,7 +62,17 @@ export default function Blog() {
 								<Typography variant="body1" className="mt-2">
 									{post.date}
 								</Typography>
-								{/* Add link to full post */}
+
+								<Button
+									variant="contained"
+									size="small"
+									color="primary"
+									component={Link}
+									to={`/blog/${post.date}`}
+									sx={{ fontSize: 12 }}
+								>
+									Read More
+								</Button>
 							</CardContent>
 						</Card>
 					</Grid>

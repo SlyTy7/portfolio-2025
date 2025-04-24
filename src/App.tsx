@@ -12,6 +12,7 @@ import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 import "./App.css";
 
@@ -70,7 +71,7 @@ export default function App() {
 							</Container>
 						}
 					/>
-
+					<Route path="/blog/:slug" element={<BlogPost />} />
 					<Route path="*" element={<NotFound />} />
 
 				</Routes>
