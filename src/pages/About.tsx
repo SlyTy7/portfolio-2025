@@ -47,7 +47,12 @@ export default function About() {
 			<Typography variant="h5" gutterBottom sx={{ mb: 1 }}>
 				Skills
 			</Typography>
-			<Stack direction="row" spacing={0} sx={{ gap: 1, mb: 4 }} flexWrap="wrap">
+			<Stack
+				direction="row"
+				spacing={0}
+				sx={{ gap: 1, mb: 4 }}
+				flexWrap="wrap"
+			>
 				{skills.map((skill, index) => (
 					<Chip
 						key={index}
@@ -58,14 +63,15 @@ export default function About() {
 				))}
 			</Stack>
 
-			<Paper sx={{py: 4, px: 4}} >
+			<Paper sx={{ py: 4, px: 4 }}>
 				<Typography variant="h5" gutterBottom sx={{ mb: 1 }}>
 					Career Timeline
 				</Typography>
 				<Stack spacing={2}>
 					<Box>
 						<Typography variant="subtitle1">
-							<strong>Senior Frontend Developer</strong> – Spring EQ
+							<strong>Senior Frontend Developer</strong> – Spring
+							EQ
 						</Typography>
 						<Typography variant="body2" color="text.secondary">
 							Remote · Mar 2023 – Present
@@ -80,30 +86,32 @@ export default function About() {
 					<Divider />
 					<Box>
 						<Typography variant="subtitle1">
-							<strong>Owner & Frontend Developer</strong> – Gold Robot
+							<strong>Owner & Frontend Developer</strong> – Gold
+							Robot
 						</Typography>
 						<Typography variant="body2" color="text.secondary">
 							San Francisco, CA · Jul 2020 – Mar 2023
 						</Typography>
 						<Typography variant="body2" sx={{ mt: 0.5 }}>
 							Designed and published HubSpot assets to the
-							marketplace. Built custom themes and modules for client
-							projects, offering scalable solutions and personalized
-							user experiences.
+							marketplace. Built custom themes and modules for
+							client projects, offering scalable solutions and
+							personalized user experiences.
 						</Typography>
 					</Box>
 					<Divider />
 					<Box>
 						<Typography variant="subtitle1">
-							<strong>Frontend Developer</strong> – The Pedowitz Group
+							<strong>Frontend Developer</strong> – The Pedowitz
+							Group
 						</Typography>
 						<Typography variant="body2" color="text.secondary">
 							Remote · Dec 2021 – Jan 2023
 						</Typography>
 						<Typography variant="body2" sx={{ mt: 0.5 }}>
 							Developed tailored HubSpot modules and themes,
-							collaborating closely with clients on UX/UI and content
-							strategy for marketing-focused solutions.
+							collaborating closely with clients on UX/UI and
+							content strategy for marketing-focused solutions.
 						</Typography>
 					</Box>
 					<Divider />
@@ -115,8 +123,8 @@ export default function About() {
 							Remote · Jun 2020 – Nov 2021
 						</Typography>
 						<Typography variant="body2" sx={{ mt: 0.5 }}>
-							Migrated client sites from WordPress to HubSpot, led UX
-							audits, and built reusable template systems to
+							Migrated client sites from WordPress to HubSpot, led
+							UX audits, and built reusable template systems to
 							accelerate delivery timelines.
 						</Typography>
 					</Box>
@@ -131,14 +139,12 @@ export default function About() {
 						<Typography variant="body2" sx={{ mt: 0.5 }}>
 							Created internal dashboards and marketing tools.
 							Collaborated with in-house teams to build
-							conversion-focused landing pages and maintain analytics
-							visibility.
+							conversion-focused landing pages and maintain
+							analytics visibility.
 						</Typography>
 					</Box>
 				</Stack>
 			</Paper>
-
-
 		</Box>
 	);
 }
