@@ -19,7 +19,9 @@ type BlogPost = {
 	content: string | null;
 };
 
-const extractHtml = (html: string): { headline: string | null; content: string | null } => {
+const extractHtml = (
+	html: string
+): { headline: string | null; content: string | null } => {
 	const parser = new DOMParser();
 	const doc = parser.parseFromString(html, "text/html");
 	const h1 = doc.querySelector("h1");
@@ -37,7 +39,7 @@ const extractHtml = (html: string): { headline: string | null; content: string |
 	}
 
 	return { headline, content };
-}
+};
 
 export default function Blog() {
 	const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -82,23 +84,25 @@ export default function Blog() {
 						key={index}
 						component="div"
 					>
-						<Card>
-							<CardContent>
+						<Card sx={{ height: "100%" }}>
+							<CardContent sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
 								<Typography variant="subtitle1" sx={{ fontSize: '.8rem' }}>
 									<strong>{post.date}</strong>
 								</Typography>
 								<Typography variant="h5" sx={{ mb: 1 }}>{post.headline}</Typography>
 								<Typography variant="body2" color="text.secondary">{post.content}</Typography>
-								<Button
-									variant="contained"
-									size="small"
-									color="primary"
-									component={Link}
-									to={`/blog/${post.date}`}
-									sx={{ fontSize: 12, mt: 4 }}
-								>
-									Read More
-								</Button>
+								<Box sx={{ flexGrow: 1, display: "flex", alignItems: "end" }}>
+									<Button
+										variant="contained"
+										size="small"
+										color="primary"
+										component={Link}
+										to={`/blog/${post.date}`}
+										sx={{ fontSize: 12, mt: 4 }}
+									>
+										Read More
+									</Button>
+								</Box>
 							</CardContent>
 						</Card>
 					</Grid>
