@@ -14,9 +14,32 @@ import { Link } from "react-router-dom";
 type BlogPost = {
 	id: string;
 	createdAt: { seconds: number };
-	headlines: string;
+	headline: string | null;
 	date: string;
+	content: string | null;
 };
+
+const extractHtml = (html: string): { headline: string | null; content: string | null } => {
+	const parser = new DOMParser();
+	const doc = parser.parseFromString(html, "text/html");
+	const h1 = doc.querySelector("h1");
+	const p = doc.querySelector("p:first-of-type");
+	let headline = null;
+	let content = null;
+
+	console.log(p)
+
+	if (h1) {
+		headline = h1.textContent;
+	}
+
+	if (p) {
+		content = p.textContent;
+		content = content && content.replace(/(.{125})..+/, "$1…");
+	}
+
+	return { headline, content };
+}
 
 export default function Blog() {
 	const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -25,10 +48,17 @@ export default function Blog() {
 		const fetchPosts = async () => {
 			const snapshot = await getDocs(collection(blogDb, "posts"));
 
-			const data = snapshot.docs.map((doc) => ({
-				id: doc.id,
-				...doc.data(),
-			})) as BlogPost[];
+			const data = snapshot.docs.map((doc) => {
+				const rawData = doc.data();
+				const { headline, content } = extractHtml(rawData.html);
+
+				return {
+					id: doc.id,
+					headline,
+					content,
+					...rawData,
+				};
+			}) as BlogPost[];
 
 			// sort by createdAt
 			const sorted = data.sort(
@@ -56,20 +86,18 @@ export default function Blog() {
 					>
 						<Card>
 							<CardContent>
-								<Typography variant="h6">
-									{post.headlines}
+								<Typography variant="subtitle1" sx={{ fontSize: '.8rem' }}>
+									<strong>{post.date}</strong>
 								</Typography>
-								<Typography variant="body1" className="mt-2">
-									{post.date}
-								</Typography>
-
+								<Typography variant="h6" sx={{ mb: 1 }}>{post.headline}</Typography>
+								<Typography variant="body2" color="text.secondary">{post.content}</Typography>
 								<Button
 									variant="contained"
 									size="small"
 									color="primary"
 									component={Link}
 									to={`/blog/${post.date}`}
-									sx={{ fontSize: 12 }}
+									sx={{ fontSize: 12, mt: 4 }}
 								>
 									Read More
 								</Button>

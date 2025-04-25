@@ -71,7 +71,11 @@ export default function App() {
 							</Container>
 						}
 					/>
-					<Route path="/blog/:slug" element={<BlogPost />} />
+					<Route path="/blog/:slug" element={
+						<Container maxWidth="lg" sx={{ mt: 4, mb:4 }}>
+							<BlogPost />
+						</Container>
+					} />
 					<Route path="*" element={<NotFound />} />
 
 				</Routes>
