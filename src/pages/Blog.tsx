@@ -87,7 +87,7 @@ export default function Blog() {
 								<Typography variant="subtitle1" sx={{ fontSize: '.8rem' }}>
 									<strong>{post.date}</strong>
 								</Typography>
-								<Typography variant="h6" sx={{ mb: 1 }}>{post.headline}</Typography>
+								<Typography variant="h5" sx={{ mb: 1 }}>{post.headline}</Typography>
 								<Typography variant="body2" color="text.secondary">{post.content}</Typography>
 								<Button
 									variant="contained"
