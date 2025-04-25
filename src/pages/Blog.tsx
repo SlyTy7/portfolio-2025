@@ -27,8 +27,6 @@ const extractHtml = (html: string): { headline: string | null; content: string |
 	let headline = null;
 	let content = null;
 
-	console.log(p)
-
 	if (h1) {
 		headline = h1.textContent;
 	}
